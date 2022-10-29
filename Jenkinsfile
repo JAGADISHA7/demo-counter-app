@@ -14,7 +14,7 @@ pipeline {
         }
          stage('integtarion test') {
             steps {
-                sh 'mvn verify DskipUnitTest'
+                sh 'mvn verify -DskipUnitTests'
             }
         }
     }
