@@ -12,5 +12,10 @@ pipeline {
                 sh 'mvn test'
             }
         }
+         stage('integtarion test') {
+            steps {
+                sh 'mvn verify DskipUnitTest'
+            }
+        }
     }
 }
