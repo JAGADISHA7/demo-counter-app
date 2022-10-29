@@ -25,9 +25,10 @@ pipeline {
         stage('sonar qube') {
             steps {
             script {
-                waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube'
+                withSonarQubeEnv(credentialsId: 'sonarqube'){
                 sh 'mvn clean package sonar:sonar'
                 }
+               }
             }
         }
     }
